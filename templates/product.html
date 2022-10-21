@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container my-3">
+
+      <div class="row">
+
+        <div class="col-md-6 mb-4 shadow-sm" >
+          <img src="{{object.image.url}}" class="img-fluid" alt="" style=" object-fit: cover;">
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="p-4">
+            <div class="mb-3">
+              <a href="">
+                <span class="badge purple mr-1">{{object.get_category_display}}</span>
+              </a>
+            </div>
+
+            <p class="">
+              {% if object.discount_price %}
+                <span class="mr-1">
+                  <del>${{object.price}}</del>
+                </span>
+                <span>${{object.discount_price}}</span>
+              {% else %}
+                <span>${{object.price}}</span>
+              {% endif %}
+            </p>
+
+            <p class="font-weight-bold">Description</p>
+
+            <p>{{object.description}}</p>
+
+              <a href="{{object.get_add_to_cart_url}}" class="btn btn-primary btn-md my-0 p">
+                Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+
+              <a href="{{object.get_remove_from_cart_url}}" class="btn btn-danger btn-md my-0 p">
+                Remove from cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+{% endblock content %}
+  

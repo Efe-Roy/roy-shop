@@ -1,0 +1,65 @@
+{% load cart_template_tags %}
+
+<nav
+  class="navbar navbar-expand-lg navbar-light shadow-sm bg-light"
+>
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/">
+      <strong class="blue-text">STORE</strong>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left -->
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+            <a class="nav-link" href="{% url 'store:home' %}">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'store:home' %}">All Products</a>
+          </li>
+      </ul>
+
+      <!-- Right -->
+
+      <ul class="navbar-nav ms-auto">
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+            <a href="{% url 'store:order-summary' %}" class="nav-link btn btn-outline-dark">
+                <i class="bi-cart-fill me-1"></i>
+                Cart
+                <span class="badge bg-dark text-white ms-1 rounded-pill">{{request.user|cart_item_count}}</span>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_logout' %}">
+            <span class="clearfix d-sm-inline-block"> Logout </span>
+          </a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_login' %}">
+            <span class="clearfix d-sm-inline-block"> Login </span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_signup' %}">
+            <span class="clearfix d-sm-inline-block"> Signup </span>
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+
+
+      
+
+    </div>
+  </div>
+</nav>

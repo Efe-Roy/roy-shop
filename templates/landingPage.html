@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <header class="bg-dark py-5">
+        <!-- Swiper -->
+        <div class="swiper mySwiper" style="width: 100%; height: 30vh;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="container px-4 px-lg-5 my-5">
+                        <div class="text-center text-white">
+                            <h1 class="display-4 fw-bolder">Shop in style</h1>
+                            <p class="lead fw-normal text-white-50 mb-0">With this shop Efe Roy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="container px-4 px-lg-5 my-5">
+                        <div class="text-center text-white">
+                            <h1 class="display-4 fw-bolder">Shop in style</h1>
+                            <p class="lead fw-normal text-white-50 mb-0">With this shop Efe Roy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </header>
+
+
+    <!-- what we offer -->
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row row-cols-1 row-cols-lg-3 g-2 gx-lg-5">
+
+            <div class="col rounded">
+                <div class="d-flex align-items-center p-4 shadow">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-truck fs-1"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span><b>Free Shipping</b></span>
+                        <p>Free shipping and delivery on all US order or order above $200 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col rounded">
+                <div class="d-flex align-items-center p-4 shadow">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-ubuntu fs-1"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span><b>Shop with Confidence</b></span>
+                        <p>Our Protection covers your purchase from click to delivery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col rounded">
+                <div class="d-flex align-items-center p-4 shadow">
+                    <div class="flex-shrink-0">
+                        <i class="bi bi-telephone-forward-fill fs-1"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                        <span><b>24/7 Help Center</b></span>
+                        <p>Round-the-clock assistance for a smooth shopping experience</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Section category-->
+    <section class="pt-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <p class="text-center fw-bold fs-3 mb-3">Category</p>
+            <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-2 justify-content-center">
+                <div class="col mb-5">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
+                        <!-- Product image-->
+                        <img class="card-img-top img-fluid" src="{% static 'img/category/container.jpg' %}" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <!-- Product details-->
+                        <div class="card-body p-4" >
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Car Importation</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto rounded-pill" href="{% url 'store:categorydetail' 'I' %}">View options</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
+                        <!-- Product image-->
+                        <img class="card-img-top img-fluid" src="static/img/category/baby-food.jpg" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <!-- Product details-->
+                        <div class="card-body p-4" >
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Baby Food In Wholesales</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto rounded-pill" href="{% url 'store:categorydetail' 'BF' %}">View options</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
+                        <!-- Product image-->
+                        <img class="card-img-top img-fluid" src="static/img/category/furniture.jpg" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <!-- Product details-->
+                        <div class="card-body p-4" >
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Furniture  Importation</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto rounded-pill" href="{% url 'store:categorydetail' 'F' %}">View options</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
+                        <!-- Product image-->
+                        <img class="card-img-top img-fluid" src="static/img/category/fund.jpg" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <!-- Product details-->
+                        <div class="card-body p-4" >
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">Money Changer</h5>
+                            </div>
+                        </div>
+                        <!-- Product actions-->
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto rounded-pill" href="#">View options</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+        <p class="text-center fw-bold fs-3">Testimonial</p>
+    <section class="content">
+        <div class="testimonial mySwiper2">
+            <div class="testi-content swiper-wrapper">
+            <div class="slide swiper-slide">
+                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.jpg" alt="" class="image shadow-lg" />
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                saepe provident dolorem a quaerat quo error facere nihil deleniti
+                eligendi ipsum adipisci, fugit, architecto amet asperiores
+                doloremque deserunt eum nemo.
+                </p>
+
+                <i class="bx bxs-quote-alt-left quote-icon"></i>
+
+                <div class="details">
+                <span class="name">Marnie Lotter</span>
+                <span class="job">Web Developer</span>
+                </div>
+            </div>
+            <div class="slide swiper-slide">
+                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.jpg" alt="" class="image shadow-lg" />
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                saepe provident dolorem a quaerat quo error facere nihil deleniti
+                eligendi ipsum adipisci, fugit, architecto amet asperiores
+                doloremque deserunt eum nemo.
+                </p>
+
+                <i class="bx bxs-quote-alt-left quote-icon"></i>
+
+                <div class="details">
+                <span class="name">Marnie Lotter</span>
+                <span class="job">Web Developer</span>
+                </div>
+            </div>
+            <div class="slide swiper-slide">
+                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.jpg" alt="" class="image shadow-lg" />
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
+                saepe provident dolorem a quaerat quo error facere nihil deleniti
+                eligendi ipsum adipisci, fugit, architecto amet asperiores
+                doloremque deserunt eum nemo.
+                </p>
+
+                <i class="bx bxs-quote-alt-left quote-icon"></i>
+
+                <div class="details">
+                <span class="name">Marnie Lotter</span>
+                <span class="job">Web Developer</span>
+                </div>
+            </div>
+            </div>
+            <div class="swiper-button-next nav-btn"></div>
+            <div class="swiper-button-prev nav-btn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+{% endblock content %}
+    
+
+{% block extra_scripts %}
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 5000,
+    },
+    });
+</script>
+
+<script>
+    var swiper = new Swiper(".mySwiper2", {
+    slidesPerView: 1,
+    grabCursor: true,
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 5000,
+    },
+    });
+
+</script>
+{% endblock extra_scripts %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<section class="">
+    <div class="container px-4 px-lg-5 mt-4">
+        <p class="text-center fw-bold fs-3 mb-3">Category</p>
+        <div class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-3 ">
+          {% for item in category %}
+            <div class="col mb-5">
+                <div class="card h-100 border-0 shadow overflow-hidden" style="border-radius: 1rem;">
+                    <img class="card-img-top img-fluid" src="{{item.image.url}}" alt="..."  style="height: 15rem; object-fit: contain;"/>
+                    <div class="card-body p-4" >
+                        <div class="text-center">
+                          <span>{{item.get_category_display}}</span>
+                          <h5>
+                            <strong>
+                              <p href="{{item.get_absolute_url}}" class="text-dark">{{item.title}}
+                                <span class="badge rounded-pill bg-{{item.get_label_display}}">NEW</span>
+                              </p>
+                            </strong>
+                          </h5>
+                            <h6 class="font-weight-bold blue-text">
+                              <span>$
+                                {% if item.discount_price %}
+                                  {{item.discount_price}}
+                                {% else %}
+                                  {{item.price}}
+                                {% endif %}
+                              </span>
+                            </h6>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a class="btn btn-outline-dark mt-auto rounded-pill" href="{{item.get_absolute_url}}">View Details</a></div>
+                    </div>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+</section>
+        
+{% endblock content %}
+    
