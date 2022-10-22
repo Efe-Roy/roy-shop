@@ -76,10 +76,21 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd8cbv1ep62rv3',
+        'USER': 'fmlbzianggnrds',
+        'PASSWORD': 'af7050024c638f4ca7baba307019249f0c079ce6b15c1f98a0dec99ef12d781d',
+        'HOST': 'ec2-34-194-40-194.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -126,7 +137,9 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = "static_root"
+django_heroku.settings(locals())
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
