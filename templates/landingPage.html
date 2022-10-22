@@ -2,32 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <header class="bg-dark py-5">
-        <!-- Swiper -->
-        <div class="swiper mySwiper" style="width: 100%; height: 30vh;">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="container px-4 px-lg-5 my-5">
-                        <div class="text-center text-white">
-                            <h1 class="display-4 fw-bolder">Shop in style</h1>
-                            <p class="lead fw-normal text-white-50 mb-0">With this shop Efe Roy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="container px-4 px-lg-5 my-5">
-                        <div class="text-center text-white">
-                            <h1 class="display-4 fw-bolder">Shop in style</h1>
-                            <p class="lead fw-normal text-white-50 mb-0">With this shop Efe Roy</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="swiper-pagination"></div>
-        </div>
-    </header>
-
+    {% include 'components/header.html' %}
 
     <!-- what we offer -->
     <div class="container px-4 px-lg-5 mt-5">
@@ -79,7 +55,7 @@
                 <div class="col mb-5">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
                         <!-- Product image-->
-                        <img class="card-img-top img-fluid" src="{% static 'img/category/container.jpg' %}" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <img class="card-img-top img-fluid" src="{% static 'img/category/container.png' %}" alt="..."  style="height: 15rem; object-fit: cover;"/>
                         <!-- Product details-->
                         <div class="card-body p-4" >
                             <div class="text-center">
@@ -96,7 +72,7 @@
                 <div class="col mb-5">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
                         <!-- Product image-->
-                        <img class="card-img-top img-fluid" src="static/img/category/baby-food.jpg" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <img class="card-img-top img-fluid" src="static/img/category/baby-food.png" alt="..."  style="height: 15rem; object-fit: cover;"/>
                         <!-- Product details-->
                         <div class="card-body p-4" >
                             <div class="text-center">
@@ -113,7 +89,7 @@
                 <div class="col mb-5">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
                         <!-- Product image-->
-                        <img class="card-img-top img-fluid" src="static/img/category/furniture.jpg" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <img class="card-img-top img-fluid" src="static/img/category/furniture.png" alt="..."  style="height: 15rem; object-fit: cover;"/>
                         <!-- Product details-->
                         <div class="card-body p-4" >
                             <div class="text-center">
@@ -130,7 +106,7 @@
                 <div class="col mb-5">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden" style="border-radius: 1rem;">
                         <!-- Product image-->
-                        <img class="card-img-top img-fluid" src="static/img/category/fund.jpg" alt="..."  style="height: 15rem; object-fit: cover;"/>
+                        <img class="card-img-top img-fluid" src="static/img/category/fund.png" alt="..."  style="height: 15rem; object-fit: cover;"/>
                         <!-- Product details-->
                         <div class="card-body p-4" >
                             <div class="text-center">
@@ -154,7 +130,7 @@
         <div class="testimonial mySwiper2">
             <div class="testi-content swiper-wrapper">
             <div class="slide swiper-slide">
-                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.jpg" alt="" class="image shadow-lg" />
+                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.png" alt="" class="image shadow-lg" />
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
                 saepe provident dolorem a quaerat quo error facere nihil deleniti
@@ -170,7 +146,7 @@
                 </div>
             </div>
             <div class="slide swiper-slide">
-                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.jpg" alt="" class="image shadow-lg" />
+                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.png" alt="" class="image shadow-lg" />
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
                 saepe provident dolorem a quaerat quo error facere nihil deleniti
@@ -186,7 +162,7 @@
                 </div>
             </div>
             <div class="slide swiper-slide">
-                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.jpg" alt="" class="image shadow-lg" />
+                <img src="static/img/joyful-beautiful-teenage-girl-with-curly-hair-posing-yellow-tshirt.png" alt="" class="image shadow-lg" />
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
                 saepe provident dolorem a quaerat quo error facere nihil deleniti
@@ -211,36 +187,26 @@
     
 
 {% block extra_scripts %}
-<script>
-    var swiper = new Swiper(".mySwiper", {
-    direction: "vertical",
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 5000,
-    },
-    });
-</script>
 
 <script>
+
     var swiper = new Swiper(".mySwiper2", {
-    slidesPerView: 1,
-    grabCursor: true,
-    loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-        delay: 5000,
-    },
+        slidesPerView: 1,
+        grabCursor: true,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+            delay: 5000,
+        },
     });
 
 </script>
+
 {% endblock extra_scripts %}
