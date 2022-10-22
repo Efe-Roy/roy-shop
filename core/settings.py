@@ -9,7 +9,7 @@ SECRET_KEY = 'django-insecure-j7^%**q8sn5t56^9hlyus2#mhkf+2g9@aa^-mmc&8o=88t=iwh
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'ecommerce-roy.herokuapp.com']
 
 
 # Application definition
