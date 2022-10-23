@@ -23,10 +23,12 @@
           <td>{{order_item.item.price}} <del>{{order_item.get_total_discount_item_price}}</del> </td>
           <td>
             <a href="{% url 'store:remove-single-item-from-cart' order_item.item.slug %}" style="text-decoration: none; color:black;">
-              <i class="bi bi-dash-circle"></i>
+              <!-- <i class="bi bi-dash-circle"></i> -->
+              -
               {{ order_item.quantity }}
             <a href="{% url 'store:add-to-cart' order_item.item.slug %}" style="text-decoration: none; color:black;">
-              <i class="bi bi-plus-circle"></i>
+              <!-- <i class="bi bi-plus-circle"></i> -->
+              +
           </td>
           <td>$
             {% if order_item.item.discount_price %}
